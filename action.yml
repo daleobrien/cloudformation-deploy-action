@@ -1,4 +1,4 @@
-name: 'CloudFormation Deploy Action'
+name: 'AWS CloudFormation Deployment'
 description: 'Deploy AWS CloudFormation Stack'
 branding:
   icon: 'upload-cloud'

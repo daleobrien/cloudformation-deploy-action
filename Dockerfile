@@ -2,8 +2,8 @@ FROM banst/awscli
 
 LABEL version="1.0.0"
 
-LABEL com.github.actions.name="CloudFormation Deploy Action"
-LABEL com.github.actions.description="Deploy AWS CloudFormation Stack"
+LABEL com.github.actions.name="AWS CloudFormation Deployment"
+LABEL com.github.actions.description="Deploy an AWS CloudFormation Stack"
 LABEL com.github.actions.icon="upload-cloud"
 LABEL com.github.actions.color="orange"
 
