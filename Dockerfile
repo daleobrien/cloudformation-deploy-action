@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM banst/awscli
 
 LABEL version="1.0.0"
 
@@ -7,11 +7,13 @@ LABEL com.github.actions.description="Deploy AWS CloudFormation Stack"
 LABEL com.github.actions.icon="upload-cloud"
 LABEL com.github.actions.color="orange"
 
-LABEL repository="https://github.com/mgenteluci/cloudformation-deploy-action"
-LABEL homepage="https://github.com/mgenteluci/cloudformation-deploy-action"
-LABEL maintainer="Matheus Genteluci <mgenteluci97@gmail.com>"
+LABEL repository="https://github.com/daleobrien/cloudformation-deploy-action"
+LABEL homepage="https://github.com/daleobrien/cloudformation-deploy-action"
+LABEL maintainer="Dale O'Brien"
 
-RUN apt-get update && apt-get install -y awscli
+RUN apk add --no-cache --virtual  .build-deps python3-dev gcc linux-headers musl-dev jq
+# Also added AWS SAM
+RUN pip install aws-sam-cli
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
